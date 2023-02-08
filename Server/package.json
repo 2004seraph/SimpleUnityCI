@@ -1,0 +1,26 @@
+{
+  "name": "cyanci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sammot/UnityDesktopCI.git"
+  },
+  "author": "CYANSERAPH",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Sammot/UnityDesktopCI/issues"
+  },
+  "homepage": "https://github.com/Sammot/UnityDesktopCI#readme",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "ini": "^3.0.1",
+    "rss-parser": "^3.12.0",
+    "shelljs": "^0.8.5"
+  }
+}
