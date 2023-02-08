@@ -18,4 +18,6 @@ It will continuously poll the GitHub commits RSS feed for the desired repository
 
 # For Client
 
+You must install the unity package located within this repo into your Unity project before the CI can work, this contains the build functionality invoked by the server.
+
 Whenever you need the project to be built, title a commit with `[Build]` (it is case-insensitive).
