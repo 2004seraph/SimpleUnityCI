@@ -36,21 +36,23 @@ function invokeBuild() {
     }
 }
 
-function pollCommit() {
+function pollCommit(firstRun = false) {
     parser.parseURL(readRemoteRSS()).then((res) => {
         let item = res.items[0]
 
         if (item.title.trim().toUpperCase() == "[BUILD]" && item.isoDate != lastBuildCommitISODate) {
-            console.log("\n")
-            console.log("NEW BUILD TRIGGERED BY COMMIT:")
-            console.log(res.items[0])
-
             lastBuildCommitISODate = item.isoDate
-            invokeBuild()
+            if (!firstRun) {
+                console.log("\n")
+                console.log("NEW BUILD TRIGGERED BY COMMIT:")
+                console.log(res.items[0])
+
+                invokeBuild()
+            }
         }
         
         setTimeout(() => {
-            pollCommit()
+            pollCommit(false)
         }, 5000)
     })
 }
@@ -80,4 +82,4 @@ if (!shell.which('git')) {
 
 const parser = new Parser()
 
-pollCommit()
+pollCommit(true)

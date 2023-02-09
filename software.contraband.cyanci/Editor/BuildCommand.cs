@@ -30,7 +30,22 @@ namespace CyanCI
             );
         }
 
-        [MenuItem("Build/Build Current Windows Config")]
+        [MenuItem("CyanCI/Build Last Commit")]
+        public static void InvokeCICommit()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C" + 
+                "cd \"" + Application.dataPath + "\\.. \"" + 
+                " && git commit --allow-empty -m \"[Build]\"" + 
+                " && git push";
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        [MenuItem("CyanCI/Local/Build Current Windows Config")]
         public static void BuildWin32()
         {
             BuildPlayerOptions options = GetBuildPlayerOptions();
@@ -59,7 +74,13 @@ namespace CyanCI
             var report = BuildPipeline.BuildPlayer(options);
             print("Build Result: " + report.summary.result.ToString());
 
-            EditorApplication.Exit(0);
+            if (
+                args.ToList<string>().IndexOf("-quit") == -1 &&
+                args.ToList<string>().IndexOf("-batchMode") != -1
+            )
+            {
+                EditorApplication.Exit(0);
+            }
         }
 
         private static string GetNewDirectoryNumber(string path)
