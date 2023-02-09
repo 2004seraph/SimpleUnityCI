@@ -16,7 +16,7 @@ A bare-bones self-hosted CI solution integrating GitHub and Unity.
 
 ## Setup
 
-Edit the `settings.ini` file, here you will enter the path to your local repo clone, as well as where you want the builds to be placed (this could be your FTP server).
+Edit the `settings.ini` file, here you will enter the path to your local repo clone, as well as where you want the builds to be placed (this could be your FTP server). These settings can be edited whilst the server is running, since they are fetched from the file every time they are needed.
 
 Run INSTALL.ps1 and locate your desired Unity editor EXE version (it will be set as an envar), then run START.bat to run the application.
 
