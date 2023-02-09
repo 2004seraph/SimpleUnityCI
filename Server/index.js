@@ -59,7 +59,7 @@ function pollCommit() {
 
 //duplicate console output to logfile
 function writeToLogFile(text) {
-    fs.appendFileSync(__dirname + '/log.txt', text)
+    fs.appendFileSync(__dirname + '/CyanCIServer.log', text)
 }
 var logStdout = process.stdout
 console.log = function () {

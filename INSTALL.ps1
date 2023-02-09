@@ -1,5 +1,7 @@
 Add-Type -AssemblyName System.Windows.Forms
 
+npm install --prefix ./Server install
+
 $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ InitialDirectory = $Env:Programfiles }
 
 $FileBrowser.Filter = "EXE (*.exe) | *.exe"
