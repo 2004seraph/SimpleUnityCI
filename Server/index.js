@@ -27,7 +27,7 @@ function invokeBuild() {
     shell.exec("git pull")
     console.log("Building Unity Project")
     let buildCommand = shell.exec('"' + __dirname + '\\..\\Scripts\\UnityBuild.bat" "' + readINISettings().repoPath + '" "' + readINISettings().buildPath + '"')
-    console.log(buildCommand.stdout)
+    writeToLogFile(buildCommand.stdout)
     if (buildCommand.code !== 0) {
         console.log('Error: Build command failed')
         shell.exit(1)
