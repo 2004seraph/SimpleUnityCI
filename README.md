@@ -1,4 +1,4 @@
-# UnityDesktopCI
+# Self-Hosted Unity CI
 
 A bare-bones self-hosted CI solution integrating GitHub and Unity.
  
@@ -6,7 +6,13 @@ A bare-bones self-hosted CI solution integrating GitHub and Unity.
 
 ## Prerequisites
 
-Install your project's Unity version somewhere on your server. Clone your project's repo somewhere on your server.
+ - NodeJS.
+ 
+ - Git.
+
+ - You must install your project's Unity version somewhere on your server.
+
+ - You must clone your project's repo somewhere on your server.
 
 ## Setup
 
@@ -15,6 +21,10 @@ Edit the `settings.ini` file, here you will enter the path to your local repo cl
 Run INSTALL.ps1 and locate your desired Unity editor EXE version (it will be set as an envar), then run START.bat to run the application.
 
 It will continuously poll the GitHub commits RSS feed for the desired repository and then run a build when a commit is titled `[Build]`.
+
+## Info
+
+The server will keep a log of all of it's actions in a file called `CyanCIServer.log`, this is located within the `Server` directory.
 
 # For Client
 
