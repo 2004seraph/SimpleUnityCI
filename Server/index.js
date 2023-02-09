@@ -55,12 +55,13 @@ function pollCommit() {
     })
 }
 
-// Main
-
-//duplicate console output to logfile
 function writeToLogFile(text) {
     fs.appendFileSync(__dirname + '/CyanCIServer.log', text)
 }
+
+// Main
+
+//duplicate console output to logfile
 var logStdout = process.stdout
 console.log = function () {
     writeToLogFile(util.format.apply(null, arguments) + '\n')
