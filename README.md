@@ -30,7 +30,7 @@ The server will keep a log of all of it's actions in a file called `CyanCIServer
 
 ## Setup
 
-There are no prerequisites or setup for clients, except you must install the unity package located within this repo into your Unity project before the CI can work, this contains the build functionality invoked by the server.
+There are no prerequisites or setup for clients, except you must install the unity package located within this repo (`software.contraband.cyanci`, and you must install it by copying the directory to your project's `Packages/` folder) before the CI can work, this contains the build functionality invoked by the server.
 
 ## Usage
 
