@@ -1,6 +1,6 @@
 # Self-Hosted Unity CI
 
-A bare-bones self-hosted CI solution integrating GitHub and Unity.
+A simple, fast, and ugly CI solution for Unity. For Github repos.
  
 # For Server
 
